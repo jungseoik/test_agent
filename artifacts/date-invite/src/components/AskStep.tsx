@@ -23,8 +23,8 @@ export default function AskStep({ onYes }: Props) {
     <div className={`card ${mounted ? "card-enter" : ""}`}>
       <div className="avatar-wrapper">
         <img
-          src="https://api.dicebear.com/7.x/fun-emoji/svg?seed=puppy&backgroundColor=b6e3f4,c0aede,d1d4f9"
-          alt="cute pup"
+          src="/profile.png"
+          alt="profile"
           className="avatar"
         />
       </div>

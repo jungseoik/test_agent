@@ -36,15 +36,6 @@ export default function FinalStep({ selectedDate, selectedTime, selectedFood }: 
 
       <div className="hearts-row">♥ ♥ ♥ ♥ ♥</div>
 
-      <a
-        href="https://replit.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="replit-badge"
-      >
-        <span className="replit-dot">●</span>
-        Built with Replit
-      </a>
     </div>
   );
 }
