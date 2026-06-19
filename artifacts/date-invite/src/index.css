@@ -1,0 +1,363 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #fff6f8 0%, #f7dce8 45%, #ead8ef 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #5b2636;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.app-bg {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Floating decorations */
+.floating-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  font-size: 20px;
+  opacity: 0.35;
+  animation: floatHeart 8s ease-in-out infinite;
+  color: #d86b9c;
+}
+
+.h1 { top: 8%; left: 5%; animation-delay: 0s; font-size: 24px; }
+.h2 { top: 15%; right: 8%; animation-delay: 1.5s; font-size: 18px; }
+.h3 { bottom: 12%; left: 9%; animation-delay: 3s; font-size: 22px; }
+.h4 { bottom: 20%; right: 6%; animation-delay: 4.5s; font-size: 16px; }
+.h5 { top: 50%; left: 2%; animation-delay: 6s; font-size: 20px; }
+
+@keyframes floatHeart {
+  0%, 100% { transform: translateY(0px) rotate(-5deg); }
+  50% { transform: translateY(-14px) rotate(5deg); }
+}
+
+/* Card */
+.card {
+  position: relative;
+  z-index: 1;
+  width: 620px;
+  max-width: calc(100vw - 40px);
+  padding: 44px 48px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 45px rgba(120, 60, 90, 0.16);
+  text-align: center;
+  opacity: 0;
+}
+
+.card-wide {
+  width: 680px;
+}
+
+.card-enter {
+  animation: popIn 0.35s ease forwards;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Avatar */
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 20px;
+  background: #e8d4ef;
+  border: 2px solid #e8c4d8;
+}
+
+/* Typography */
+.title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1.25;
+  color: #5a2234;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.final-title {
+  font-size: 30px;
+  line-height: 1.35;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #6d3a4a;
+  margin-top: 4px;
+}
+
+/* Big icon */
+.big-icon {
+  font-size: 52px;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+/* Buttons */
+.btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 32px;
+  position: relative;
+}
+
+.no-wrapper {
+  position: relative;
+  width: 110px;
+  height: 52px;
+}
+
+.btn-yes {
+  background: #d86b9c;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  width: 130px;
+  height: 52px;
+  font-size: 17px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 14px rgba(216, 107, 156, 0.35);
+}
+
+.btn-yes:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 22px rgba(216, 107, 156, 0.45);
+}
+
+.btn-yes:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.btn-yes:disabled {
+  cursor: not-allowed;
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.btn-no {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #9b58c9;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  width: 110px;
+  height: 52px;
+  font-size: 15px;
+  font-family: Georgia, serif;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Form */
+.form-group {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 15px;
+  color: #6d3a4a;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: Georgia, serif;
+}
+
+.form-input {
+  width: 100%;
+  height: 48px;
+  border: 1.5px solid #c8a8b5;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 15px;
+  font-family: Georgia, serif;
+  color: #5a2234;
+  background: rgba(255, 255, 255, 0.85);
+  outline: none;
+  transition: border-color 0.15s ease;
+  appearance: auto;
+}
+
+.form-input:focus {
+  border-color: #d86b9c;
+  box-shadow: 0 0 0 3px rgba(216, 107, 156, 0.15);
+}
+
+/* Food grid */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.food-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(247, 220, 232, 0.4);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 18px 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: Georgia, serif;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+  border-color: #d86b9c;
+  box-shadow: 0 6px 18px rgba(216, 107, 156, 0.25);
+}
+
+.food-card-selected {
+  border-color: #d86b9c;
+  background: rgba(216, 107, 156, 0.12);
+  box-shadow: 0 6px 18px rgba(216, 107, 156, 0.3);
+}
+
+.food-emoji {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.food-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #5a2234;
+}
+
+/* Final screen */
+.date-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+.date-summary span {
+  background: rgba(216, 107, 156, 0.12);
+  border: 1.5px solid #d99ab5;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 14px;
+  color: #5a2234;
+  font-weight: 600;
+}
+
+.final-ps {
+  font-size: 14px;
+  color: #6d3a4a;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+.hearts-row {
+  color: #d86b9c;
+  font-size: 20px;
+  letter-spacing: 6px;
+  margin-top: 20px;
+}
+
+.replit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  background: #f26b2b;
+  color: white;
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s ease;
+}
+
+.replit-badge:hover {
+  opacity: 0.88;
+}
+
+.replit-dot {
+  font-size: 10px;
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .card {
+    padding: 28px 22px;
+    width: calc(100vw - 32px);
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .final-title {
+    font-size: 22px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn-row {
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+}
